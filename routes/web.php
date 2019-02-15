@@ -19,7 +19,7 @@ Route::post('category/add','CategoryController@add');
 Route::post('article/add','ArticleController@add');
 
 Route::get('article/select',function(){
-    return \App\Http\Resources\Article::collection(\App\Models\Article::paginate(10));
+    return ['code'=>200,'msg'=>'SUCCESS',\App\Http\Resources\Article::collection(\App\Models\Article::paginate(10))];
 });
 
 Route::get('article/show/{id}',function($id){
