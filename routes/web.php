@@ -19,7 +19,8 @@ Route::post('category/add','CategoryController@add');
 Route::post('article/add','ArticleController@add');
 
 Route::get('article/select',function(){
-    return ['code'=>200,'msg'=>'SUCCESS','data'=>\App\Http\Resources\Article::collection(\App\Models\Article::paginate(10))];
+    $data = ['code'=>200,'msg'=>'SUCCESS','data'=>\App\Http\Resources\Article::collection(\App\Models\Article::paginate(10))];
+    return response()->json($data);
 });
 
 Route::get('article/show/{id}',function($id){
