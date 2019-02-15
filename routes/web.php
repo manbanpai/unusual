@@ -20,7 +20,7 @@ Route::post('article/add','ArticleController@add');
 
 Route::get('article/select',function(){
     $data = ['code'=>200,'msg'=>'SUCCESS','data'=>\App\Http\Resources\Article::collection(\App\Models\Article::paginate(10))];
-    return response()->json($data);
+    return response()->json($data,200);
 });
 
 Route::get('article/show/{id}',function($id){
